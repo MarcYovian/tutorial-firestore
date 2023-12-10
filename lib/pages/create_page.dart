@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:tutorial_firestore/pages/home_page.dart';
 import 'package:tutorial_firestore/services/firebase_crud.dart';
@@ -25,6 +27,7 @@ class _CreatePageState extends State<CreatePage> {
           if (value == null || value.trim().isEmpty) {
             return 'This field is required';
           }
+          return null;
         },
         decoration: InputDecoration(
             contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
@@ -38,6 +41,7 @@ class _CreatePageState extends State<CreatePage> {
           if (value == null || value.trim().isEmpty) {
             return 'This field is required';
           }
+          return null;
         },
         decoration: InputDecoration(
             contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
@@ -51,6 +55,7 @@ class _CreatePageState extends State<CreatePage> {
           if (value == null || value.trim().isEmpty) {
             return 'This field is required';
           }
+          return null;
         },
         decoration: InputDecoration(
             contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
@@ -70,7 +75,7 @@ class _CreatePageState extends State<CreatePage> {
         },
         child: const Text('View List of Employee'));
 
-    final SaveButon = Material(
+    final saveButton = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
       color: Theme.of(context).primaryColor,
@@ -134,7 +139,7 @@ class _CreatePageState extends State<CreatePage> {
                   contactField,
                   viewListbutton,
                   const SizedBox(height: 45.0),
-                  SaveButon,
+                  saveButton,
                   const SizedBox(height: 15.0),
                 ],
               ),
